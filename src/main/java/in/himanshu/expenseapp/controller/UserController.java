@@ -18,11 +18,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<ResponseUserDto> createUser(@Valid @RequestBody RequestUserDto requestUserDto){
-        return new ResponseEntity<ResponseUserDto>(userService.createUser(requestUserDto), HttpStatus.CREATED);
-    }
-
 
     //Password is also returning. Need to look how to resolve it. RESOLVED. BY ADDING A DIFFERENT DTO which is specific for Responses only
     @GetMapping("/user/{id}")
