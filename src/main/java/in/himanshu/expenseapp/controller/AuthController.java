@@ -25,11 +25,11 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<String> login(){
 
-        return new ResponseEntity<String>("User is logged in", HttpStatus.OK);
+        return new ResponseEntity<>("User is logged in", HttpStatus.OK);
     }
 
     @PostMapping("/register")
     public ResponseEntity<ResponseUserDto> createUser(@Valid @RequestBody RequestUserDto requestUserDto){
-        return new ResponseEntity<ResponseUserDto>(userService.createUser(requestUserDto), HttpStatus.CREATED);
+        return new ResponseEntity<>(userService.createUser(requestUserDto), HttpStatus.CREATED);
     }
 }

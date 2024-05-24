@@ -17,7 +17,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler{
@@ -47,7 +47,7 @@ public ResponseEntity<ErrorObject> handleMethodArgumentMismatchTypeException(Met
         errorObject.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
         errorObject.setMessage(ex.getMessage());
         errorObject.setTimestamp(new Date());
-        return new ResponseEntity<ErrorObject>(errorObject,HttpStatus.valueOf(errorObject.getStatusCode()));
+        return new ResponseEntity<>(errorObject, HttpStatus.valueOf(errorObject.getStatusCode()));
     }
 
     @Override
@@ -75,7 +75,7 @@ public ResponseEntity<ErrorObject> handleMethodArgumentMismatchTypeException(Met
         errorObject.setMessage(ex.getMessage());
         errorObject.setTimestamp(new Date());
         errorObject.setStatusCode(HttpStatus.CONFLICT.value());
-        return new ResponseEntity<ErrorObject>(errorObject,HttpStatus.valueOf(errorObject.getStatusCode()));
+        return new ResponseEntity<>(errorObject, HttpStatus.valueOf(errorObject.getStatusCode()));
     }
 
 
