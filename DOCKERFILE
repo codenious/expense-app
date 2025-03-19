@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the compiled JAR file into the container
-COPY src/ExpenseappApplication.java /app/ExpenseappApplication.java
+COPY src/main/java/in/himanshu/expenseapp/ExpenseappApplication.java /app/ExpenseappApplication.java
 
 #complie code
 RUN javac ExpenseappApplication.java
