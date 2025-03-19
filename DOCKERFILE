@@ -11,4 +11,4 @@ COPY src/ExpenseappApplication.java /app/ExpenseappApplication.java
 RUN javac ExpenseappApplication.java
 
 # Command to run the application
-CMD["Java" "ExpenseappApplication"]
+CMD["java" "ExpenseappApplication"]
